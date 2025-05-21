@@ -1,7 +1,7 @@
-# from django.urls import path
-# from . import views
+from django.urls import path
+from . import views
 
-# urlpatterns = [
-#     path('', views.cardapio, name='cardapio'),
-# ]
+urlpatterns = [
+    path('', views.cardapio, name='cardapio'),
+]
 

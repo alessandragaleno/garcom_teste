@@ -1,8 +1,8 @@
 from django.db import models
-from mesa.models import Mesa
+from cardapio.models import Produtos
 
 # Modelo para as Categorias de Produtos
-class Categorias(models.Model):
+class Categoria(models.Model):
     # O nome da categoria, por exemplo: "Pizza", "Bebidas", etc.
     nome = models.CharField(max_length=255)
     
@@ -36,3 +36,4 @@ class Produto(models.Model):  # noqa: F811
     # Método que define como o produto será exibido quando for chamado, por exemplo, no Django Admin.
     def __str__(self):
         return self.nome
+

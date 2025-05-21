@@ -1,11 +1,10 @@
 from django.db import models
-from produtos.models import Produtos  # Importando o modelo de Produtos, do app produtos
 
 # Modelo para a tabela Produtos
 class Produtos(models.Model):  # noqa: F811
     # Criando uma chave estrangeira para relacionar com outro produto. 
     # Isso significa que o produto pode estar associado a outro produto (como um "produto relacionado", por exemplo).
-    produto_id = models.ForeignKey('Produtos', on_delete=models.CASCADE)
+    produto_id = models.ForeignKey('Produtos', on_delete=models.CASCADE, blank=True)
     
     # Nome do produto, por exemplo: "Pizza Calabresa", "Refrigerante", etc.
     nome = models.CharField(max_length=100)

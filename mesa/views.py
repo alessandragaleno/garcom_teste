@@ -1,5 +1,5 @@
 from django.utils import timezone
-from django.shortcuts import render
+# from django.shortcuts import render
 import qrcode
 from django.http import HttpResponse
 from io import BytesIO
@@ -23,19 +23,14 @@ def gerar_qr_code(request, mesa_id):
     # Retorna o QR Code como imagem
     return HttpResponse(img_io, content_type="image/png")
 
-
-# Create your views here.
-def home(request):
-    return render(request, 'home.html')
-
-def ocupar(self, cliente):
+def ocupar_mesa(self, cliente):
         """Método para marcar a mesa como ocupada e associar um cliente"""
         self.status = 'ocupada'
         self.cliente = cliente
         self.data_ocupacao = timezone.now()  # noqa: F821
         self.save()
 
-def desocupar(self):
+def desocupar_mesa(self):
     """Método para liberar a mesa"""
     self.status = 'disponivel'
     self.cliente = None
